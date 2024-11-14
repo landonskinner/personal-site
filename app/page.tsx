@@ -1,101 +1,231 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i: number) => {
+    const delay = INITIAL_DELAY + SHRINK_DURATION + 0.5 + i * 0.5;
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, duration: 1, bounce: 0 },
+        opacity: { delay, duration: 0.01 },
+      },
+    };
+  },
+};
+
+const INITIAL_DELAY = 0.5;
+const SHRINK_DURATION = 0.75;
+
+const transition = {
+  duration: SHRINK_DURATION,
+  delay: INITIAL_DELAY,
+};
+
+const L = () => (
+  <>
+    <path
+      fill="black"
+      d="m69.7136,38.87748l0,147.40337l0,0c0,19.31026 -15.41555,34.96428 -34.4316,34.96428c-19.01603,0 -34.43157,-15.65404 -34.43157,-34.96428l0,-147.40337l0,0c0,-19.31023 15.41554,-34.96428 34.43157,-34.96428c19.01606,0 34.4316,15.65404 34.4316,34.96428z"
+    />
+    <motion.path
+      variants={{
+        start: {
+          d: "m69.71362,182.2208l0,5.16121l0,0c0,0.67613 -15.41555,1.22425 -34.43159,1.22425c-19.01604,0 -34.43158,-0.54811 -34.43158,-1.22425l0,-5.16121l0,0c0,-0.67613 15.41554,-1.22425 34.43158,-1.22425c19.01606,0 34.43159,0.54811 34.43159,1.22425z",
+        },
+        end: {
+          d: "m116.42463,221.24302l-92.87814,0l0,0c-12.1673,0 -22.03082,-15.53289 -22.03082,-34.69369c0,-19.16079 9.86353,-34.69367 22.03082,-34.69367l92.87814,0l0,0c12.16729,0 22.03083,15.53288 22.03083,34.69367c0,19.16082 -9.86354,34.69369 -22.03083,34.69369z",
+        },
+      }}
+      transition={{
+        duration: 1,
+        delay: INITIAL_DELAY + SHRINK_DURATION,
+      }}
+      fill="#000000"
+    />
+  </>
+);
+const A = () => (
+  <>
+    <motion.path
+      animate={{
+        d: [
+          "m214.86317,38.96428l0,147.40338l0,0c0,19.31026 -15.41555,34.96428 -34.43159,34.96428c-19.01604,0 -34.43158,-15.65403 -34.43158,-34.96428l0,-147.40338l0,0c0,-19.31023 15.41554,-34.96428 34.43158,-34.96428c19.01606,0 34.43159,15.65403 34.43159,34.96428z",
+          "m219.40644,55.85184l-66.69382,143.18208l0,0c-8.73708,18.75726 -29.26425,27.2601 -45.84876,18.99168c-16.58449,-8.26841 -22.94609,-30.17703 -14.20902,-48.93427l66.69382,-143.18208l0,0c8.73707,-18.75723 29.26424,-27.26011 45.84874,-18.99169c16.58451,8.26843 22.94611,30.17705 14.20904,48.93429z",
+        ],
+      }}
+      // variants={{
+      //   start: {
+      //     d: "m214.86317,38.96428l0,147.40338l0,0c0,19.31026 -15.41555,34.96428 -34.43159,34.96428c-19.01604,0 -34.43158,-15.65403 -34.43158,-34.96428l0,-147.40338l0,0c0,-19.31023 15.41554,-34.96428 34.43158,-34.96428c19.01606,0 34.43159,15.65403 34.43159,34.96428z",
+      //   },
+      //   end: {
+      //     d: "m219.40644,55.85184l-66.69382,143.18208l0,0c-8.73708,18.75726 -29.26425,27.2601 -45.84876,18.99168c-16.58449,-8.26841 -22.94609,-30.17703 -14.20902,-48.93427l66.69382,-143.18208l0,0c8.73707,-18.75723 29.26424,-27.26011 45.84874,-18.99169c16.58451,8.26843 22.94611,30.17705 14.20904,48.93429z",
+      //   },
+      // }}
+      transition={transition}
+      fill="#000000"
+    />
+    <motion.line
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={0}
+      stroke="#000"
+      fill="#000000"
+      x1="145.02041"
+      y1="143.17131"
+      x2="250.94543"
+      y2="143.6762"
+      strokeWidth="6"
+    />
+    <motion.line
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={0.5}
+      stroke="#000"
+      x1="219.11686"
+      y1="29.14916"
+      x2="267.08002"
+      y2="199.73938"
+      strokeWidth="6"
+    />
+  </>
+);
+const N1 = () => (
+  <>
+    <motion.line
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={1.5}
+      stroke="#000"
+      x1="324.38878"
+      y1="25.58567"
+      x2="370.3769"
+      y2="196.03134"
+      strokeWidth="6"
+    />
+    <motion.path
+      variants={{
+        start: {
+          d: "m360.86318,38.96428l0,147.40338l0,0c0,19.31026 -15.41555,34.96428 -34.43159,34.96428c-19.01604,0 -34.43158,-15.65403 -34.43158,-34.96428l0,-147.40338l0,0c0,-19.31023 15.41554,-34.96428 34.43158,-34.96428c19.01606,0 34.43159,15.65403 34.43159,34.96428z",
+        },
+        end: {
+          d: "m329.9901,38.66028l0,145.80828l0,0c0,19.1013 -15.41555,34.58592 -34.4316,34.58592c-19.01603,0 -34.43157,-15.48463 -34.43157,-34.58592l0,-145.80828l0,0c0,-19.10126 15.41554,-34.58591 34.43157,-34.58591c19.01606,0 34.4316,15.48465 34.4316,34.58591z",
+        },
+      }}
+      transition={transition}
+      fill="#000000"
+    />
+    <motion.path
+      variants={{
+        start: {
+          d: "m506.86318,38.96428l0,147.40338l0,0c0,19.31026 -15.41555,34.96428 -34.43159,34.96428c-19.01604,0 -34.43158,-15.65403 -34.43158,-34.96428l0,-147.40338l0,0c0,-19.31023 15.41554,-34.96428 34.43158,-34.96428c19.01606,0 34.43159,15.65403 34.43159,34.96428z",
+        },
+        end: {
+          d: "m434.7681,38.92527l0,147.1158l0,0c0,19.27259 -15.41555,34.89606 -34.4316,34.89606c-19.01603,0 -34.43157,-15.62349 -34.43157,-34.89606l0,-147.1158l0,0c0,-19.27255 15.41554,-34.89605 34.43157,-34.89605c19.01606,0 34.4316,15.62351 34.4316,34.89605z",
+        },
+      }}
+      transition={transition}
+      fill="#000000"
+    />
+  </>
+);
+const D = () => (
+  <>
+    <motion.path
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={2.5}
+      stroke="#000"
+      fill="none"
+      strokeWidth="6"
+      d="m403.73262,6.81417l75.41342,0l0,0c41.64969,0 75.41342,47.32993 75.41342,105.71438c0,58.38445 -33.76373,105.71438 -75.41342,105.71438l-75.41342,0l0,-211.42874l0,-0.00001z"
+    />
+  </>
+);
+const O = () => (
+  <>
+    <motion.circle
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={4.5}
+      stroke="#000"
+      fill="none"
+      strokeWidth="6"
+      cx="560.54459"
+      cy="112.74647"
+      r="104"
+    />
+    <motion.circle
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={3.5}
+      stroke="#000"
+      fill="none"
+      strokeWidth="6"
+      cx="560.54463"
+      cy="112.74647"
+      r="60"
+    />
+  </>
+);
+const N2 = () => (
+  <>
+    <motion.line
+      initial="hidden"
+      animate="visible"
+      variants={draw}
+      custom={5.5}
+      stroke="#000"
+      x1="689.46469"
+      y1="28.25978"
+      x2="734.75837"
+      y2="196.62209"
+      strokeWidth="6"
+    />
+    <motion.path
+      variants={{
+        start: {
+          d: "m652.86318,38.96428l0,147.40338l0,0c0,19.31026 -15.41555,34.96428 -34.43159,34.96428c-19.01604,0 -34.43158,-15.65403 -34.43158,-34.96428l0,-147.40338l0,0c0,-19.31023 15.41554,-34.96428 34.43158,-34.96428c19.01606,0 34.43159,15.65403 34.43159,34.96428z",
+        },
+        end: {
+          d: "m694.37156,39.94548l0,145.80828l0,0c0,19.1013 -15.41555,34.58592 -34.4316,34.58592c-19.01603,0 -34.43157,-15.48463 -34.43157,-34.58592l0,-145.80828l0,0c0,-19.10126 15.41554,-34.58591 34.43157,-34.58591c19.01606,0 34.4316,15.48465 34.4316,34.58591z",
+        },
+      }}
+      transition={transition}
+      fill="#000000"
+    />
+    <path
+      fill="#000000"
+      d="m799.14955,40.0037l0,146.24412l0,0c0,19.1584 -15.41555,34.6893 -34.4316,34.6893c-19.01603,0 -34.43157,-15.53091 -34.43157,-34.6893l0,-146.24412l0,0c0,-19.15835 15.41554,-34.68929 34.43157,-34.68929c19.01606,0 34.4316,15.53094 34.4316,34.68929z"
+    />
+  </>
+);
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="w-full h-full pt-[40%]">
+      <motion.svg
+        initial="start"
+        xmlns="http://www.w3.org/2000/svg"
+        width="800"
+        height="225"
+        animate="end"
+        className="mx-auto"
+      >
+        <L />
+        <A />
+        <N1 />
+        <D />
+        <O />
+        <N2 />
+      </motion.svg>
     </div>
   );
 }
