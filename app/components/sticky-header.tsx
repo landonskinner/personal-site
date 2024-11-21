@@ -78,7 +78,12 @@ const StickyHeader = () => {
       viewBox="0 0 800 225"
       color="#000"
       stroke="#000"
-      style={{ scale, paddingBlock: top }}
+      style={{
+        scale,
+        paddingBlock: top,
+        border: "1px solid #33323145",
+        boxShadow: "0 4px 30px #33323127",
+      }}
     >
       {/* L */}
       <path
