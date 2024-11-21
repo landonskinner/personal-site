@@ -1,86 +1,26 @@
-"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { start } from "repl";
-
-const INITIAL_DELAY = 0.25;
-const SHRINK_DURATION = 0.75;
-
-const draw = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (i: number) => {
-    const delay = INITIAL_DELAY + SHRINK_DURATION + i * 0.5;
-    return {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { delay, duration: 1, bounce: 0 },
-        opacity: { delay, duration: 0.01 },
-      },
-    };
-  },
-};
-
-const MotionPath = ({ path }: { path: [start: string, end: string] }) => {
-  return (
-    <motion.path
-      initial="start"
-      animate="end"
-      variants={{ start: { d: path[0] }, end: { d: path[1] } }}
-      transition={{
-        duration: SHRINK_DURATION,
-        delay: INITIAL_DELAY,
-        ease: "easeInOut",
-      }}
-      fill="currentColor"
-    />
-  );
-};
-
-const MotionLine = ({
-  x1,
-  y1,
-  x2,
-  y2,
-  delay,
-}: {
-  x1: string;
-  y1: string;
-  x2: string;
-  y2: string;
-  delay: number;
-}) => {
-  return (
-    <motion.line
-      initial="hidden"
-      animate="visible"
-      variants={draw}
-      stroke="currentColor"
-      strokeWidth="6"
-      x1={x1}
-      x2={x2}
-      y1={y1}
-      y2={y2}
-      custom={delay}
-    />
-  );
-};
+import {
+  drawCircle,
+  drawLine,
+  transitionPath,
+} from "../animations/sticky-header.animations";
 
 const StickyHeader = () => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.3, 1], [1, 0.5, 0.5]);
-  const top = useTransform(scrollYProgress, [0, 0.3, 1], [60, 12, 12]);
+
   return (
     <motion.svg
       initial="start"
       animate="end"
       xmlns="http://www.w3.org/2000/svg"
-      className="z-10 sticky top-1 my-8 mx-auto max-w-[900px] px-12 bg-[var(--background)]/20 rounded-3xl origin-top backdrop-blur-md"
+      className="sticky top-1 z-10 mx-auto py-14 px-12 my-8 max-w-[900px] bg-background/20 rounded-5xl origin-top backdrop-blur-md"
       viewBox="0 0 800 225"
+      //   TODO: color decision
       color="#000"
       stroke="#000"
       style={{
         scale,
-        paddingBlock: top,
         border: "1px solid #33323145",
         boxShadow: "0 4px 30px #33323127",
       }}
@@ -96,6 +36,7 @@ const StickyHeader = () => {
           "m116.42463,221.24302l-92.87814,0l0,0c-12.1673,0 -22.03082,-15.53289 -22.03082,-34.69369c0,-19.16079 9.86353,-34.69367 22.03082,-34.69367l92.87814,0l0,0c12.16729,0 22.03083,15.53288 22.03083,34.69367c0,19.16082 -9.86354,34.69369 -22.03083,34.69369z",
         ]}
       />
+
       {/* A */}
       <MotionPath
         path={[
@@ -117,6 +58,7 @@ const StickyHeader = () => {
         y2="199.73938"
         delay={0.5}
       />
+
       {/* N1 */}
       <MotionLine
         x1="324.38878"
@@ -137,25 +79,26 @@ const StickyHeader = () => {
           "m434.7681,38.92527l0,147.1158l0,0c0,19.27259 -15.41555,34.89606 -34.4316,34.89606c-19.01603,0 -34.43157,-15.62349 -34.43157,-34.89606l0,-147.1158l0,0c0,-19.27255 15.41554,-34.89605 34.43157,-34.89605c19.01606,0 34.4316,15.62351 34.4316,34.89605z",
         ]}
       />
+
       {/* D */}
       <motion.path
         initial="hidden"
         animate="visible"
-        variants={draw}
+        variants={drawLine}
         custom={2.5}
         stroke="currentColor"
         fill="none"
         strokeWidth="6"
         d="m403.73262,6.81417l75.41342,0l0,0c41.64969,0 75.41342,47.32993 75.41342,105.71438c0,58.38445 -33.76373,105.71438 -75.41342,105.71438l-75.41342,0l0,-211.42874l0,-0.00001z"
       />
+
       {/* O */}
       <motion.circle
         initial="hidden"
         animate="visible"
-        variants={draw}
+        variants={drawLine}
         custom={4.5}
         stroke="currentColor"
-        // stroke="rgb(99 102 241)"
         fill="none"
         strokeWidth="6"
         cx="560.54459"
@@ -165,38 +108,14 @@ const StickyHeader = () => {
       <motion.circle
         initial="hidden"
         animate="visible"
-        variants={{
-          hidden: {
-            pathLength: 0,
-            opacity: 0,
-            strokeWidth: 6,
-            stroke: "currentColor",
-          },
-          visible: (i: number) => {
-            const delay = INITIAL_DELAY + SHRINK_DURATION + i * 0.5;
-            return {
-              pathLength: 1,
-              opacity: 1,
-              strokeWidth: 72,
-              stroke: "rgb(99 102 241)",
-              transition: {
-                pathLength: { delay, duration: 1, bounce: 0 },
-                opacity: { delay, duration: 0.01 },
-                strokeWidth: { delay: delay + 2, duration: 1 },
-                stroke: { delay: delay + 2, duration: 0.01 },
-              },
-            };
-          },
-        }}
+        variants={drawCircle}
         custom={3.5}
-        // stroke="currentColor"
-        stroke="rgb(99 102 241)"
         fill="none"
-        strokeWidth="6"
         cx="560.54463"
         cy="112.74647"
         r="60"
       />
+
       {/* N2 */}
       <MotionLine
         x1="689.46469"
@@ -220,3 +139,44 @@ const StickyHeader = () => {
 };
 
 export default StickyHeader;
+
+const MotionPath = ({ path }: { path: [start: string, end: string] }) => {
+  return (
+    <motion.path
+      initial="start"
+      animate="end"
+      variants={{ start: { d: path[0] }, end: { d: path[1] } }}
+      transition={transitionPath}
+      fill="currentColor"
+    />
+  );
+};
+
+const MotionLine = ({
+  x1,
+  y1,
+  x2,
+  y2,
+  delay,
+}: {
+  x1: string;
+  y1: string;
+  x2: string;
+  y2: string;
+  delay: number;
+}) => {
+  return (
+    <motion.line
+      initial="hidden"
+      animate="visible"
+      variants={drawLine}
+      stroke="currentColor"
+      strokeWidth="6"
+      x1={x1}
+      x2={x2}
+      y1={y1}
+      y2={y2}
+      custom={delay}
+    />
+  );
+};
