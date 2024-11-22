@@ -1,5 +1,5 @@
 "use client";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 import AnimatedCard from "./animated-card";
 import { ABOUT_ME_CARDS } from "../data/about-me.data";
@@ -11,16 +11,13 @@ const AboutMe = () => {
   });
 
   const x = useTransform(
-    scrollYProgress,
+    useSpring(scrollYProgress, { stiffness: 250, damping: 50 }),
     [0, 1],
     ["1%", `-${(1 - 1 / ABOUT_ME_CARDS.length) * 100}%`]
   );
 
   return (
-    <section
-      ref={targetRef}
-      className="relative h-[400vh] sm:h-[300vh] bg-background"
-    >
+    <section ref={targetRef} className="relative h-[300vh] bg-background">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex sm:mt-[20vh] mb-8">
           {ABOUT_ME_CARDS.map((card, i) => (
