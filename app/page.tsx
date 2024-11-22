@@ -10,7 +10,7 @@ export default function Home() {
       <PageButtons />
       <div>
         <StickyHeader />
-        <div className="bg-contain bg-repeat pt-[80vh] bg-decorative" />
+        <div className="sm:bg-[length:175vw] bg-[length:300vw] bg-top-right bg-repeat pt-[80vh] bg-decorative" />
         <AboutMe />
         <ProjectCards />
       </div>

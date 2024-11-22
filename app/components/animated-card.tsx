@@ -10,7 +10,7 @@ const font = Space_Grotesk({
 
 type Props = (typeof ABOUT_ME_CARDS)[number] & { index: number };
 
-const AnimatedCard = ({ title, index }: Props) => {
+const AnimatedCard = ({ title, description, index }: Props) => {
   return (
     <motion.div
       whileHover="hover"
@@ -25,7 +25,7 @@ const AnimatedCard = ({ title, index }: Props) => {
       }}
       className="relative h-full w-full rounded-5xl bg-foreground border border-border p-8 overflow-hidden"
     >
-      <div className="relative h-full flex flex-col justify-between z-10 text-copy-lighter">
+      <div className="relative h-full flex flex-col justify-between z-10 text-copy">
         <motion.span
           initial={{ scale: 0.85 }}
           variants={{
@@ -37,13 +37,11 @@ const AnimatedCard = ({ title, index }: Props) => {
             duration: 1,
             ease: "backInOut",
           }}
-          className={`my-2 origin-top-left text-6xl ${font.className}`}
+          className={`my-2 origin-top-left text-6xl lowercase ${font.className}`}
         >
           {title}
         </motion.span>
-        <p className="font-bold">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, rem.
-        </p>
+        {!!description && <p className="font-bold lowercase">{description}</p>}
       </div>
       <Background index={index} />
     </motion.div>

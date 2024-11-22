@@ -15,7 +15,7 @@
   --copy-light: #596f73;
   --copy-lighter: #7e979b;
 
-  --background-image: url("/background-light.svg");
+  --background-image: url("/background-dark.svg");
 }
 
 .dark {
@@ -27,7 +27,7 @@
   --copy-light: #d4dcde;
   --copy-lighter: #9baeb1;
 
-  --background-image: url("/background-dark.svg");
+  --background-image: url("/background-light.svg");
 }
 
 body {

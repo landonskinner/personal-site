@@ -70,8 +70,8 @@ const ExpandedCard = ({
       exit={{ opacity: 0 }}
       className="h-full bg-background p-2"
     >
-      <div className="h-full bg-contain bg-center flex gap-x-4 justify-stretch max-sm:flex-col bg-decorative">
-        <div className="bg-cover basis-2/5 sm:order-2 bg-border rounded-3.5xl sm:rounded-4.5xl bg-decorative" />
+      <div className="h-full bg-left flex gap-x-4 justify-stretch max-sm:flex-col bg-decorative bg-[length:300%] sm:bg-[length:175%]">
+        <div className="basis-2/5 sm:order-2 border-border border-2 bg-primary rounded-3.5xl sm:rounded-4.5xl" />
         <div className="basis-3/5 flex flex-col max-sm:contents">
           <p className="text-center py-8 grow text-copy-lighter font-bold">
             {description}
@@ -90,7 +90,7 @@ const ExpandedCard = ({
                     ease: "easeOut",
                     delay: 0.1,
                   }}
-                  className="flex-1 text-primary"
+                  className="flex-1"
                   style={{
                     background:
                       "linear-gradient(transparent, transparent 50%, var(--background) 50%, var(--background))",
@@ -99,7 +99,7 @@ const ExpandedCard = ({
                 >
                   <a
                     href={href}
-                    className="h-full flex justify-center items-center text-primary-dark"
+                    className="h-full flex justify-center items-center text-copy-lighter"
                   >
                     <Icon size={40} />
                   </a>

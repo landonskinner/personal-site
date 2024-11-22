@@ -188,7 +188,7 @@ export const Background = ({ index }: { index: number }) => {
     <motion.svg
       viewBox="0 0 320 384"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 z-0 p-2 m-auto max-w-full max-h-full text-primary-dark"
+      className="absolute inset-0 z-0 p-2 m-auto max-w-full max-h-full text-copy-lighter"
       variants={{
         hover: {
           scale: 1.5,
