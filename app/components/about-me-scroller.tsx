@@ -19,7 +19,7 @@ const AboutMe = () => {
   return (
     <section
       ref={targetRef}
-      className="relative h-[200vh] sm:h-[300vh] bg-background"
+      className="relative h-[400vh] sm:h-[300vh] bg-background"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex sm:mt-[20vh] mb-8">
