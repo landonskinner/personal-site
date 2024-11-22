@@ -17,12 +17,11 @@ export const useDarkMode = () => {
     await document.startViewTransition(() => {
       flushSync(() => {
         setIsDarkMode(!isDarkMode);
+        return isDarkMode
+          ? document.documentElement.classList.remove("dark")
+          : document.documentElement.classList.add("dark");
       });
     }).ready;
-
-    isDarkMode
-      ? document.documentElement.classList.remove("dark")
-      : document.documentElement.classList.add("dark");
 
     const { top, left, width, height } = (
       e.target as HTMLButtonElement

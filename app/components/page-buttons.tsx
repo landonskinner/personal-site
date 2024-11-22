@@ -30,7 +30,7 @@ const DarkModeToggle = () => {
   const { toggleDarkMode } = useDarkMode();
   return (
     <div className="w-full flex rounded-full p-1 backdrop-blur-md grow basis-14 sm:basis-12 row-start-2">
-      {/* @ts-ignore */}
+      {/* @ts-expect-error ignore props */}
       <DarkInner
         className="text-copy-lighter grow [&>svg]:w-full [&>svg]:h-full"
         duration={750}
