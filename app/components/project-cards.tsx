@@ -32,6 +32,7 @@ const WrappingTitle = ({
       />
       <text>
         <motion.textPath
+          initial={{ startOffset: "3%" }}
           transition={{
             duration: 1,
             ease: "easeInOut",
@@ -80,6 +81,7 @@ const ExpandedCard = ({
               const Icon = PROJECT_ICONS[name];
               return (
                 <motion.div
+                  key={name}
                   whileHover={{
                     backgroundPosition: "100% 100%",
                   }}

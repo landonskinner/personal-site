@@ -1,3 +1,4 @@
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   drawCircle,
@@ -14,7 +15,7 @@ const StickyHeader = () => {
       initial="start"
       animate="end"
       xmlns="http://www.w3.org/2000/svg"
-      className="stroke-copy-light text-copy-light sticky top-1 z-10 mx-auto py-14 px-12 mt-[30vh] sm:mt-[20vh] mb-8 max-w-[900px] rounded-5xl origin-top backdrop-blur-md"
+      className="stroke-copy-light text-copy-light sticky top-1 z-10 mx-auto py-14 px-12 mt-[20vh] sm:mt-[10vh] mb-8 max-w-[900px] rounded-5xl origin-top backdrop-blur-md"
       viewBox="0 0 800 225"
       style={{
         scale,

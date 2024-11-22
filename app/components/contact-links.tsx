@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
 import { transition } from "../animations/contact-links.animations";

@@ -32,7 +32,7 @@ export const drawCircle: Variants = {
       pathLength: 1,
       opacity: 1,
       strokeWidth: 72,
-      stroke: "var(--primary-dark)",
+      stroke: "var(--copy-lighter)",
       transition: {
         pathLength: { delay: delay(i), duration: 1, bounce: 0 },
         opacity: { delay: delay(i), duration: 0.01 },
