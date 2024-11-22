@@ -17,13 +17,16 @@ const AboutMe = () => {
   );
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-background">
+    <section
+      ref={targetRef}
+      className="relative h-[200vh] sm:h-[300vh] bg-background"
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex sm:mt-[20vh] mb-8">
           {ABOUT_ME_CARDS.map((card, i) => (
             <section
               key={i}
-              className="p-4 h-[60vh] w-[95vw] sm:w-96 overflow-hidden"
+              className="p-4 min-h-[60vh] max-h-[80vh] w-[95vw] sm:w-96 overflow-hidden"
             >
               <AnimatedCard {...card} index={i} />
             </section>
