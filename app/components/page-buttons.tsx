@@ -48,7 +48,7 @@ const PageButtons = () => {
   });
 
   return (
-    <div className="sticky top-[85dvh] mx-4 sm:mx-2 left-full z-50 grid grid-rows-2 gap-1.5 grid-cols-1 w-14 sm:w-12 items-stretch justify-stretch">
+    <div className="sticky top-[80dvh] sm:top-[85dvh] mx-4 sm:mx-2 left-full z-50 grid grid-rows-2 gap-1.5 grid-cols-1 w-14 sm:w-12 items-stretch justify-stretch">
       <AnimatePresence>{showJumpButton && <JumpButton />}</AnimatePresence>
       <DarkModeToggle />
     </div>
