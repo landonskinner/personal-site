@@ -29,7 +29,7 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
       initial="initial"
       whileHover="hover"
       href={href}
-      className="relative block overflow-hidden leading-[0.75] sm:leading-[0.75] tracking-tighter whitespace-nowrap text-7xl sm:text-9xl"
+      className="relative block overflow-hidden leading-[0.75] sm:leading-[0.75] tracking-tighter whitespace-nowrap text-6xl sm:text-9xl"
     >
       <div>
         {children.split("").map((l, i) => (
