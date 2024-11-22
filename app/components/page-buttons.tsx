@@ -16,7 +16,7 @@ const JumpButton = () => {
       initial={{ left: "200%" }}
       animate={{ left: "0%" }}
       exit={{ left: "200%" }}
-      className="relative rounded-full backdrop-blur-md grow basis-14 sm:basis-12"
+      className="relative rounded-full grow basis-14 sm:basis-12"
       onClick={() => {
         scrollTo({ top: 0, behavior: "smooth" });
       }}
@@ -29,7 +29,7 @@ const JumpButton = () => {
 const DarkModeToggle = () => {
   const { toggleDarkMode } = useDarkMode();
   return (
-    <div className="w-full flex rounded-full p-1 backdrop-blur-md grow basis-14 sm:basis-12 row-start-2">
+    <div className="w-full flex rounded-full p-1 grow basis-14 sm:basis-12 row-start-2">
       {/* @ts-expect-error ignore props */}
       <DarkInner
         className="text-copy-lighter grow [&>svg]:w-full [&>svg]:h-full"
