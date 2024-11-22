@@ -14,15 +14,10 @@ const StickyHeader = () => {
       initial="start"
       animate="end"
       xmlns="http://www.w3.org/2000/svg"
-      className="sticky top-1 z-10 mx-auto py-14 px-12 my-8 max-w-[900px] bg-background/20 rounded-5xl origin-top backdrop-blur-md"
+      className="stroke-copy-light text-copy-light sticky top-1 z-10 mx-auto py-14 px-12 mt-[30vh] sm:mt-[20vh] mb-8 max-w-[900px] rounded-5xl origin-top backdrop-blur-md"
       viewBox="0 0 800 225"
-      //   TODO: color decision
-      color="#000"
-      stroke="#000"
       style={{
         scale,
-        border: "1px solid #33323145",
-        boxShadow: "0 4px 30px #33323127",
       }}
     >
       {/* L */}

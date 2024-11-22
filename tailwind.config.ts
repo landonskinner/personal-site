@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: "selector",
   theme: {
     extend: {
+      backgroundImage: {
+        decorative: "var(--background-image)",
+      },
       borderRadius: {
         "3.5xl": "26px",
         "4xl": "36px",
@@ -16,9 +19,18 @@ const config: Config = {
         "5xl": "48px",
       },
       colors: {
+        primary: "var(--primary)",
+        "primary-content": "var(--primary-content)",
+        "primary-dark": "var(--primary-dark)",
+        "primary-light": "var(--primary-light)",
+
         background: "var(--background)",
         foreground: "var(--foreground)",
-        accent: "var(--accent)",
+        border: "var(--border)",
+
+        copy: "var(--copy)",
+        "copy-light": "var(--copy-light)",
+        "copy-lighter": "var(--copy-lighter)",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

@@ -2,23 +2,20 @@
 
 import StickyHeader from "./components/sticky-header";
 import AboutMe from "./components/about-me-scroller";
-import { useRef, useState } from "react";
-import { flushSync } from "react-dom";
 import ContactLinks from "./components/contact-links";
 import ProjectCards from "./components/project-cards";
-import HeroDivider from "./components/hero-divider";
 import { useDarkMode } from "./hooks/use-dark-mode";
 
 export default function Home() {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { toggleDarkMode } = useDarkMode();
   return (
     <div className="relative">
-      <button className="sticky top-0" onClick={toggleDarkMode}>
+      <button className="sticky top-0 z-30" onClick={toggleDarkMode}>
         Here
       </button>
-      <div className="dark:bg-black">
+      <div>
         <StickyHeader />
-        <HeroDivider />
+        <div className="bg-contain bg-repeat pt-[80vh] bg-decorative" />
         <AboutMe />
         <ProjectCards />
       </div>

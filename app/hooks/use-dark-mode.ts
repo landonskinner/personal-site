@@ -42,12 +42,12 @@ export const useDarkMode = () => {
         ],
       },
       {
-        duration: 500,
-        easing: "ease-in-out",
+        duration: 750,
+        easing: "ease-out",
         pseudoElement: "::view-transition-new(root)",
       }
     );
   };
 
-  return { isDarkMode, toggleDarkMode };
+  return { toggleDarkMode };
 };

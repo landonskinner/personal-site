@@ -23,9 +23,9 @@ const AnimatedCard = ({ title, index }: Props) => {
           scale: 1.05,
         },
       }}
-      className="relative h-full w-full rounded-5xl bg-indigo-500 p-8 overflow-hidden"
+      className="relative h-full w-full rounded-5xl bg-foreground border border-border p-8 overflow-hidden"
     >
-      <div className="relative h-full flex flex-col justify-between z-10 text-white">
+      <div className="relative h-full flex flex-col justify-between z-10 text-copy-lighter">
         <motion.span
           initial={{ scale: 0.85 }}
           variants={{
@@ -41,7 +41,7 @@ const AnimatedCard = ({ title, index }: Props) => {
         >
           {title}
         </motion.span>
-        <p>
+        <p className="font-bold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, rem.
         </p>
       </div>

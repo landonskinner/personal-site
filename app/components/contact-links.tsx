@@ -10,7 +10,7 @@ const font = Space_Grotesk({
 
 const ContactLinks = () => (
   <section
-    className={`${font.className} grid place-content-center gap-2 bg-indigo-500 px-8 py-24 text-black h-screen`}
+    className={`${font.className} grid place-content-center gap-2 bg-background px-8 py-24 h-screen`}
   >
     {CONTACT_LINKS.map((link, i) => (
       <FlipLink key={i} href={link.href}>
@@ -42,7 +42,7 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
               },
             }}
             transition={transition(i)}
-            className="inline-block text-background"
+            className="inline-block text-primary"
             key={i}
           >
             {l}
@@ -61,7 +61,7 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
               },
             }}
             transition={transition(i)}
-            className="inline-block text-white"
+            className="inline-block text-copy-lighter"
             key={i}
           >
             {l}

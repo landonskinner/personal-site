@@ -41,7 +41,7 @@ const WrappingTitle = ({
             startOffset: isInView ? "44%" : "3%",
           }}
           href="#titlePath"
-          className={`fill-background text-3xl uppercase ${font.className}`}
+          className={`fill-copy-light text-3xl uppercase ${font.className}`}
         >
           {title}
         </motion.textPath>
@@ -67,54 +67,45 @@ const ExpandedCard = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      style={{
-        backgroundImage: `url(./background.svg)`,
-      }}
-      className="h-full bg-contain bg-center flex gap-x-4 justify-stretch max-sm:flex-col bg-accent p-2"
+      className="h-full bg-background p-2"
     >
-      <div
-        className="bg-cover basis-2/5 sm:order-2 bg-background rounded-3.5xl sm:rounded-4.5xl"
-        style={{
-          backgroundImage: `url(./background-light.svg)`,
-        }}
-      />
-      <div className="basis-3/5 flex flex-col max-sm:contents text-white">
-        <p className="text-center py-8 grow">{description}</p>
-        <ul
-          className="flex-none backdrop-blur-sm basis-20 border border-white/30 flex overflow-hidden rounded-3.5xl sm:rounded-4.5xl"
-          style={{
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          {links.map(({ name, href }) => {
-            const Icon = PROJECT_ICONS[name];
-            return (
-              <motion.div
-                whileHover={{
-                  backgroundPosition: "100% 100%",
-                }}
-                transition={{
-                  duration: 0.25,
-                  ease: "easeOut",
-                  delay: 0.1,
-                }}
-                className="flex-1"
-                style={{
-                  background:
-                    "linear-gradient(transparent, transparent 50%, #252525bd 50%, #252525bd )",
-                  backgroundSize: "100% 200%",
-                }}
-              >
-                <a
-                  href={href}
-                  className="h-full flex justify-center items-center"
+      <div className="h-full bg-contain bg-center flex gap-x-4 justify-stretch max-sm:flex-col bg-decorative">
+        <div className="bg-cover basis-2/5 sm:order-2 bg-border rounded-3.5xl sm:rounded-4.5xl bg-decorative" />
+        <div className="basis-3/5 flex flex-col max-sm:contents">
+          <p className="text-center py-8 grow text-copy-lighter font-bold">
+            {description}
+          </p>
+          <ul className="flex-none backdrop-blur-sm basis-20 shadow-md flex overflow-hidden rounded-3.5xl sm:rounded-4.5xl">
+            {links.map(({ name, href }) => {
+              const Icon = PROJECT_ICONS[name];
+              return (
+                <motion.div
+                  whileHover={{
+                    backgroundPosition: "100% 100%",
+                  }}
+                  transition={{
+                    duration: 0.25,
+                    ease: "easeOut",
+                    delay: 0.1,
+                  }}
+                  className="flex-1 text-primary"
+                  style={{
+                    background:
+                      "linear-gradient(transparent, transparent 50%, var(--background) 50%, var(--background))",
+                    backgroundSize: "100% 200%",
+                  }}
                 >
-                  <Icon size={40} />
-                </a>
-              </motion.div>
-            );
-          })}
-        </ul>
+                  <a
+                    href={href}
+                    className="h-full flex justify-center items-center text-primary-dark"
+                  >
+                    <Icon size={40} />
+                  </a>
+                </motion.div>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </motion.div>
   );
@@ -144,7 +135,7 @@ const Card = ({
           ease: "easeInOut",
           type: "bounce",
         }}
-        className="bg-background rounded-4xl sm:rounded-5xl overflow-hidden border-4 border-background"
+        className="bg-border rounded-4xl sm:rounded-5xl overflow-hidden border border-border"
       >
         <AnimatePresence>
           {isInView && <ExpandedCard index={index} {...project} />}
@@ -154,9 +145,9 @@ const Card = ({
   );
 };
 
-const NewCards = () => {
+const ProjectCards = () => {
   return (
-    <motion.div className="w-full bg-white p-10 pt-16 sm:p-20 sm:pt-40 space-y-20 sm:space-y-32 sm:min-h-screen">
+    <motion.div className="w-full bg-foreground p-10 pt-16 sm:p-20 sm:pt-40 space-y-20 sm:space-y-32 sm:min-h-screen">
       {PROJECTS.map((project, index) => (
         <Card key={index} index={index} {...project} />
       ))}
@@ -164,4 +155,4 @@ const NewCards = () => {
   );
 };
 
-export default NewCards;
+export default ProjectCards;
