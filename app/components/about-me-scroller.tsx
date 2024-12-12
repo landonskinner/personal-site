@@ -11,7 +11,7 @@ const AboutMe = () => {
   });
 
   const x = useTransform(
-    useSpring(scrollYProgress, { stiffness: 250, damping: 50 }),
+    useSpring(scrollYProgress, { stiffness: 500, damping: 100 }),
     [0, 1],
     ["1%", `-${(1 - 1 / ABOUT_ME_CARDS.length) * 100}%`]
   );
