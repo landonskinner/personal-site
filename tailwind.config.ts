@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         decorative: "var(--background-image)",
+        illustraite: "var(--illustraite)",
       },
       borderRadius: {
         "3.5xl": "26px",

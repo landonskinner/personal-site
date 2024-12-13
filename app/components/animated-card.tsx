@@ -41,7 +41,7 @@ const AnimatedCard = ({ title, description, index }: Props) => {
         >
           {title}
         </motion.span>
-        {!!description && <p className="font-bold lowercase">{description}</p>}
+        {!!description && <p className="font-bold">{description}</p>}
       </div>
       <Background index={index} />
     </motion.div>

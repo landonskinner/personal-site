@@ -16,6 +16,7 @@
   --copy-lighter: #7e979b;
 
   --background-image: url("/background-dark.svg");
+  --illustraite: url("/illustraite.gif");
 }
 
 .dark {

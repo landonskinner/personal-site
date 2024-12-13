@@ -22,7 +22,7 @@ const WrappingTitle = ({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-24 -24 500 320"
-      className="absolute max-w-screen sm:w-[500px] z-0 -top-5 -left-5 sm:-top-8 sm:-left-8"
+      className="absolute max-w-screen w-full sm:w-[500px] z-0 -top-5 -left-5 sm:-top-8 sm:-left-8"
     >
       <path
         xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +59,8 @@ const PROJECT_ICONS = {
 
 const ExpandedCard = ({
   description,
+  techUsed,
+  comment,
   links,
   index,
 }: (typeof PROJECTS)[number] & { index: number }) => {
@@ -66,35 +68,44 @@ const ExpandedCard = ({
     <motion.div
       key={`card-${index}`}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: 1, transition: { delay: 1 } }}
       exit={{ opacity: 0 }}
       className="h-full bg-background p-2"
     >
-      <div className="h-full bg-left flex gap-x-4 justify-stretch max-sm:flex-col bg-decorative bg-[length:300%] sm:bg-[length:175%]">
-        <div className="basis-2/5 sm:order-2 border-border border-2 bg-foreground rounded-3.5xl sm:rounded-4.5xl" />
-        <div className="basis-3/5 flex flex-col max-sm:contents">
-          <p className="text-center py-8 grow text-copy-lighter font-bold">
-            {description}
-          </p>
-          <ul className="flex-none basis-20 flex overflow-hidden rounded-3.5xl sm:rounded-4.5xl">
-            {links.map(({ name, href }) => {
-              const Icon = PROJECT_ICONS[name];
-              return (
-                <div
-                  key={name}
-                  className="flex-1 text-copy-lighter hover:text-copy-light transition-colors duration-300"
-                >
-                  <a
-                    href={href}
-                    className="h-full flex justify-center items-center"
-                  >
-                    <Icon size={40} />
-                  </a>
-                </div>
-              );
-            })}
-          </ul>
+      <div className="h-full justify-between bg-left bg-decorative bg-cover flex flex-col gap-y-4">
+        <div className="flex gap-x-4 justify-stretch max-sm:flex-col gap-y-6">
+          <div className="shrink basis-2/5 sm:order-2 aspect-square h-fit bg-illustraite bg-cover bg-center bg-no-repeat border-border border-4 rounded-3.5xl sm:rounded-4.5xl" />
+          <div className="h-full basis-3/5 text-copy-light justify-between flex flex-col gap-y-6 px-2 pt-2 sm:px-6 sm:pt-6">
+            <div className="space-y-4">
+              <p className="text-xl md:text-2xl font-bold">{description}</p>
+              <p className="text-sm md:text-lg md:leading-tight">{comment}</p>
+            </div>
+
+            <div>
+              <h4 className="font-bold">Tech Used</h4>
+              <p className="text-sm md:text-md">{techUsed.join(", ")}</p>
+            </div>
+          </div>
         </div>
+        <ul className="flex pb-4">
+          {links.map(({ name, href }) => {
+            const Icon = PROJECT_ICONS[name];
+            return (
+              <div
+                key={name}
+                className="flex-1 text-copy-lighter hover:text-copy-light transition-colors duration-300"
+              >
+                <a
+                  href={href}
+                  className="h-full flex justify-center items-center"
+                  target="_blank"
+                >
+                  <Icon size={40} />
+                </a>
+              </div>
+            );
+          })}
+        </ul>
       </div>
     </motion.div>
   );
@@ -106,13 +117,13 @@ const Card = ({
 }: (typeof PROJECTS)[number] & { index: number }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, {
-    amount: 0.9,
+    amount: 0.6,
   });
 
   return (
     <motion.div
       ref={ref}
-      className="relative flex justify-center min-h-[400px] max-w-[800px] mx-auto"
+      className="relative flex justify-center h-[875px] sm:h-[600px] lg:h-[500px] max-w-[900px]"
     >
       <WrappingTitle title={project.title} isInView={isInView} />
       <motion.div
@@ -136,7 +147,7 @@ const Card = ({
 
 const ProjectCards = () => {
   return (
-    <motion.div className="w-full bg-foreground p-10 pt-16 sm:p-20 sm:pt-40 space-y-20 sm:space-y-32 sm:min-h-screen">
+    <motion.div className="w-full flex flex-col justify-center items-stretch sm:items-center bg-foreground p-10 pt-16 sm:p-20 sm:pt-40 space-y-20 sm:space-y-32 sm:min-h-screen">
       {PROJECTS.map((project, index) => (
         <Card key={index} index={index} {...project} />
       ))}

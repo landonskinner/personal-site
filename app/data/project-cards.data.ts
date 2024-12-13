@@ -1,20 +1,28 @@
 export const PROJECTS = [
   {
-    title: "Project Name here",
-    description: "Project Description",
-    links: [
-      { name: "GitHub", href: "", description: "View the source code" },
-      { name: "Demo", href: "", description: "Watch a demo" },
-      { name: "Deployment", href: "", description: "View the live site" },
+    title: "ILLUSTRAITOR",
+    description:
+      "IllustrAIte is a gamified illustration tool that leverages AI to grade your drawings.",
+    comment:
+      "The aim of this project was to learn more about HTML's Canvas API and its application for user-generated animations. Additionally, this was an opportunity to experiment with Vercel's AI SDK and the ease of OpenAI integration. Finally, I found it to be an interesting case study in implementing an AI-focused application design.",
+    techUsed: [
+      "NextJS",
+      "Vercel AI",
+      "shadcn/ui",
+      "TailwindCSS",
+      "TypeScript",
+      "HTML Canvas",
+      "Jest",
     ],
-  },
-  {
-    title: "Project Name here",
-    description: "Project Description",
     links: [
-      { name: "GitHub", href: "", description: "View the source code" },
-      { name: "Demo", href: "", description: "Watch a demo" },
-      { name: "Deployment", href: "", description: "View the live site" },
+      {
+        name: "GitHub",
+        href: "https://github.com/landonskinner/illustraitor-app",
+      },
+      {
+        name: "Deployment",
+        href: "https://illustraitor-app.vercel.app/",
+      },
     ],
   },
 ] as const;

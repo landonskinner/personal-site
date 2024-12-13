@@ -8,13 +8,10 @@ export default function Home() {
   return (
     <div className="relative">
       <PageButtons />
-      <div>
-        <StickyHeader />
-        <div className="sm:bg-[length:175vw] bg-[length:300vw] bg-top-right bg-repeat pt-[80vh] bg-decorative" />
-        <AboutMe />
-        <ProjectCards />
-      </div>
-
+      <StickyHeader />
+      <div className="sm:bg-[length:175vw] bg-[length:300vw] bg-top-right bg-repeat pt-[80vh] bg-decorative" />
+      <AboutMe />
+      <ProjectCards />
       <ContactLinks />
     </div>
   );

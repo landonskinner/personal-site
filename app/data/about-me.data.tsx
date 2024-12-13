@@ -8,7 +8,7 @@ export const ABOUT_ME_CARDS = [
   {
     title: "Currently, I work at Gartner.",
     description:
-      "My team built and supports our organization's flagship forms-as-a-service application, which funnels +$100M in Pay-Per-Lead revenue annually.",
+      "My team built and supports our organization's flagship Forms-as-a-Service application, which funnels +$100M in Pay-Per-Lead revenue annually.",
   },
   {
     title: "I leverage many tools.",
