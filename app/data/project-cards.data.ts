@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     title: "ILLUSTRAITOR",
     description:
-      "IllustrAIte is a gamified illustration tool that leverages AI to grade your drawings.",
+      "IllustrAItor is a gamified illustration tool that leverages AI to grade your drawings.",
     comment:
       "The aim of this project was to learn more about HTML's Canvas API and its application for user-generated animations. Additionally, this was an opportunity to experiment with Vercel's AI SDK and the ease of OpenAI integration. Finally, I found it to be an interesting case study in implementing an AI-focused application design.",
     techUsed: [
