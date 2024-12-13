@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 import { Background } from "../animations/about-me.animations";
-import { Space_Grotesk } from "next/font/google";
 import { ABOUT_ME_CARDS } from "../data/about-me.data";
-const font = Space_Grotesk({
-  weight: "700",
-  style: "normal",
-  subsets: ["latin"],
-});
-
 type Props = (typeof ABOUT_ME_CARDS)[number] & { index: number };
 
 const AnimatedCard = ({ title, description, index }: Props) => {
@@ -37,7 +30,7 @@ const AnimatedCard = ({ title, description, index }: Props) => {
             duration: 1,
             ease: "backInOut",
           }}
-          className={`my-2 origin-top-left text-6xl lowercase ${font.className}`}
+          className="my-2 origin-top-left text-6xl lowercase font-bold"
         >
           {title}
         </motion.span>

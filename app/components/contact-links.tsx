@@ -1,18 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { Space_Grotesk } from "next/font/google";
 import { transition } from "../animations/contact-links.animations";
 import { CONTACT_LINKS } from "../data/contact-links.data";
-const font = Space_Grotesk({
-  weight: "700",
-  style: "normal",
-  subsets: ["latin"],
-});
 
 const ContactLinks = () => (
-  <section
-    className={`${font.className} grid place-content-center gap-2 bg-background px-8 py-24 h-screen`}
-  >
+  <section className="font-bold grid place-content-center gap-2 bg-background px-8 py-24 h-screen">
     {CONTACT_LINKS.map((link, i) => (
       <FlipLink key={i} href={link.href}>
         {link.title}

@@ -1,15 +1,9 @@
 "use client";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Space_Grotesk } from "next/font/google";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 import { PROJECTS } from "../data/project-cards.data";
-const font = Space_Grotesk({
-  weight: "700",
-  style: "normal",
-  subsets: ["latin"],
-});
 
 const WrappingTitle = ({
   title,
@@ -42,7 +36,7 @@ const WrappingTitle = ({
             startOffset: isInView ? "44%" : "3%",
           }}
           href="#titlePath"
-          className={`fill-copy-light text-3xl uppercase ${font.className}`}
+          className="fill-copy-light text-3xl uppercase font-bold"
         >
           {title}
         </motion.textPath>
