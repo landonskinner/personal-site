@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Background } from "../animations/about-me.animations";
 import { ABOUT_ME_CARDS } from "../data/about-me.data";
 import useIsMobile from "../hooks/use-mobile";
