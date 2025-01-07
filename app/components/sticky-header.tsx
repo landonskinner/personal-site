@@ -15,7 +15,7 @@ const StickyHeader = () => {
       initial="start"
       animate="end"
       xmlns="http://www.w3.org/2000/svg"
-      className="stroke-primary text-primary sticky top-1 z-10 mx-auto py-14 px-12 mt-[20vh] sm:mt-[10vh] mb-8 max-w-[900px] rounded-5xl origin-top"
+      className="stroke-primary text-primary sticky top-1 z-20 mx-auto py-14 px-12 mt-[20vh] sm:mt-[10vh] mb-8 max-w-[900px] rounded-5xl origin-top"
       viewBox="0 0 800 225"
       style={{
         scale,
