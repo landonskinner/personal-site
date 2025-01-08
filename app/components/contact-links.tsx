@@ -21,6 +21,7 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
       initial="initial"
       whileHover="hover"
       href={href}
+      target="_blank"
       className="relative block overflow-hidden leading-[0.75] sm:leading-[0.75] tracking-tighter whitespace-nowrap text-6xl sm:text-9xl"
     >
       <div>

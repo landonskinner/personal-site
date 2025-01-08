@@ -1,7 +1,7 @@
 export const CONTACT_LINKS = [
   {
     title: "Resume",
-    href: "/resume",
+    href: "/resume.pdf",
   },
   {
     title: "LinkedIn",
