@@ -6,19 +6,29 @@ export const ABOUT_ME_CARDS = [
     description: "I'm a Front-End Engineer based in Denver, CO.",
   },
   {
-    title: "Currently, I work at Gartner.",
+    title: "I'm open to work.",
     description:
-      "My team built and supports our organization's flagship Forms-as-a-Service application, which funnels +$100M in Pay-Per-Lead revenue annually.",
+      "I'm looking for my next role where I can contribute my skills and grow with a strong, fast-paced team.",
+  },
+  {
+    title: "I've worked at Shipium...",
+    description:
+      "As part of the UI team, I enhanced Shipium's logistics platform with ML-driven insights, faster client onboarding, and more accurate simulation data for better customer decisions.",
+  },
+  {
+    title: "...and Gartner too.",
+    description:
+      "My team built the organization's flagship Forms-as-a-Service application, which funnels +$100M in Pay-Per-Lead revenue annually.",
   },
   {
     title: "I leverage many tools.",
     description:
-      "In my day-to-day, I use a range of services, libraries, and framework. NextJS, Vercel, GraphQL, TypeScript, NodeJS, TailwindCSS, LaunchDarkly, Google Analytics, Contentful, Jest...",
+      "In my day-to-day, I use a range of services, libraries, and frameworks. NextJS, Vercel, GraphQL, TypeScript, NodeJS, TailwindCSS, LaunchDarkly, Google Analytics, Contentful, Jest...",
   },
   {
     title: "I enjoy a challenge",
     description:
-      "Despite entering my company in a junior position, my role has allowed me the freedom and space to explore interests, take charge on intiatives, and grow as an engineer. I love the process of taking an idea from inception to production.",
+      "I started at Gartner as a junior engineer and grew into a mid-level role, taking ownership of initiatives on our flagship revenue-generating platform. Craving a new challenge, I shifted into the startup world at Shipium, where I navigated the complex logistics space and tackled unfamiliar technical and business problems head-on.",
   },
   {
     title: "and being creative.",
