@@ -10,6 +10,7 @@ const font = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://landonskinner.dev"),
   title: "Landon Skinner",
   description: "My personal website.",
 };
