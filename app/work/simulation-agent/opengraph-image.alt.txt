@@ -1,0 +1,1 @@
+A simulation agent's summary card listing engine, name, shipment source, and settings, with Create simulation and Edit buttons
