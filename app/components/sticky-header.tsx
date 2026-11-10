@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   drawCircle,
+  solidCircle,
   drawLine,
   transitionPath,
 } from "../animations/sticky-header.animations";
@@ -105,6 +106,16 @@ const StickyHeader = () => {
         initial="hidden"
         animate="visible"
         variants={drawCircle}
+        custom={3.5}
+        fill="none"
+        cx="560.54463"
+        cy="112.74647"
+        r="60"
+      />
+      <motion.circle
+        initial="hidden"
+        animate="visible"
+        variants={solidCircle}
         custom={3.5}
         fill="none"
         cx="560.54463"
